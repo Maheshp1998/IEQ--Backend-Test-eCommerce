@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "aeb317c8-2e9f-452a-a8dc-8be940be879b",
+		"name": "practical-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24967563",
+		"_collection_link": "https://crimson-shuttle-782582.postman.co/workspace/-MyWorkspace~56259e6c-3e0d-482b-ad03-969350007f9d/collection/24967563-aeb317c8-2e9f-452a-a8dc-8be940be879b?action=share&source=collection_link&creator=24967563"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test225-user\",\n    \"password\":\"123\",\n    \"email\":\"tes252t@gmail.com\",\n    \"phone_number\":\"9979334456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:5000/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test22-user\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:5000/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create-products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Smartphone\",\n  \"description\": \"High-performance smartphone\",\n  \"price\": 599.99,\n  \"quantity\": 100,\n  \"category\": \"Electronics\",\n  \"brand\": \"BrandXYZ\",\n  \"image_url\": \"https://example.com/smartphone.jpg\",\n  \"is_featured\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:5000/create-products"
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/get-products"
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete-product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/delete-orders/65d97929d9964d0c4dd6a487"
+					},
+					"response": []
+				},
+				{
+					"name": "filter-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": \"customer_id\",\n    \"sort_by\": \"-order_date\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/products-searching?price=599.99",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"products-searching"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "599.99"
+								},
+								{
+									"key": "sort_by",
+									"value": "2024-02-23T12:43:06.693+00:00",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "get-orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "create-order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n  \"customer_id\": \"65d88aea8982bc789c61c58e\", \n  \"product_id\": \"65d892da5e3b79ff55de31b9\",  \n  \"quantity\": 2,\n  \"shipping_address\": \"123 Main Street, Cityville\"\n\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:5000/create-orders"
+					},
+					"response": []
+				},
+				{
+					"name": "update-order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n  \"customer_id\": \"65d88b4bc13831fd848fd180\", \n  \"product_id\": \"65d892da5e3b79ff55de31b9\",  \n  \"quantity\": 3\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:5000/update-orders/65d97929d9964d0c4dd6a487"
+					},
+					"response": []
+				},
+				{
+					"name": "delete-order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/delete-orders/65d97929d9964d0c4dd6a487"
+					},
+					"response": []
+				},
+				{
+					"name": "order-search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/order-searching?total_price=599.99",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order-searching"
+							],
+							"query": [
+								{
+									"key": "total_price",
+									"value": "599.99"
+								},
+								{
+									"key": "quantity",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
